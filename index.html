@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Streak Bloom</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header card">
+        <div class="brand">
+          <span class="logo">🌸</span>
+          <div>
+            <p class="eyebrow">Keep the glow going</p>
+            <h1>Streak Bloom</h1>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="pill" id="openSettings" aria-label="Open settings">⚙️ Settings</button>
+        </div>
+      </header>
+
+      <section class="freeze-bank card" aria-live="polite">
+        <div>
+          <p class="label">❄️ Weekly freezes</p>
+          <p class="freeze-count"><span id="freezeCount">0</span>/3</p>
+        </div>
+        <p class="hint">Three fresh freezes arrive every Monday. Use them before they melt!</p>
+      </section>
+
+      <section class="add-habit card">
+        <h2>✨ Add a habit</h2>
+        <form id="habitForm">
+          <label>
+            <span>Emoji</span>
+            <input type="text" id="habitEmoji" maxlength="2" placeholder="💧" aria-label="Habit emoji" />
+          </label>
+          <label>
+            <span>Name</span>
+            <input type="text" id="habitName" placeholder="Daily stretch" required aria-label="Habit name" />
+          </label>
+          <button type="submit" class="primary">➕ Add</button>
+        </form>
+      </section>
+
+      <section class="habits" id="habitList" aria-live="polite">
+        <p class="empty-state">Add your first habit to start a streak 🌱</p>
+      </section>
+    </div>
+
+    <div class="settings-panel hidden" id="settingsPanel" role="dialog" aria-modal="true">
+      <div class="settings-card card">
+        <header>
+          <h2>⚙️ Settings</h2>
+          <button class="icon" id="closeSettings" aria-label="Close settings">✖️</button>
+        </header>
+        <div class="settings-body">
+          <p class="hint">Pick a habit below and delete it if you're done.</p>
+          <ul id="settingsHabitList"></ul>
+        </div>
+      </div>
+    </div>
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+    <template id="habitTemplate">
+      <article class="habit card">
+        <header>
+          <div class="identity">
+            <span class="habit-emoji"></span>
+            <div>
+              <p class="habit-name"></p>
+              <p class="last-check"></p>
+            </div>
+          </div>
+          <p class="streak">🔥 <span class="streak-count"></span> day streak</p>
+        </header>
+        <div class="habit-actions">
+          <button class="primary check-in">✅ Check in</button>
+          <button class="secondary freeze">❄️ Freeze</button>
+        </div>
+        <p class="status"></p>
+      </article>
+    </template>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
