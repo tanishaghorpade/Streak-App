@@ -1,0 +1,3 @@
+Original prompt for the Cursor agent:
+
+"An app that counts streaks for anything: streak for workouts, for not eating sugar, for meditation, drinking water. Only a simple one click check-in button is needed to mark the acitivity as done. Just like duolingo there should be streak freezes too. 3 streak freezes are awarded every week and can be applied towards any of the streak counts. Unused streak freezes do not roll over to the next week. If you run out of streak freezes your streak is lost. Use emojis instead of your regular symbols where needed. Provide an option in settings to delete a habit. Make the UI in dark mode - and use pink, green, yellow as the colour palette.
